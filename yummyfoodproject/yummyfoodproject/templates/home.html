@@ -2,4 +2,12 @@
 {% block content  %}
 
 <h1> hello {{name}}!!!!!</h1>
+<div>
+    <form action="add" method="post">
+        {% csrf_token %}
+        <input type="number" placeholder="enter first number" name="num1">
+        <input type="number" placeholder="enter second number" name="num2">
+        <button type="submit">submit</button>
+    </form>
+</div>
 {% endblock  %}
