@@ -2,10 +2,10 @@ from django.db import models
 
 # Create your models here.
 
-class FoodCatalogue:
-    id=int
-    name=str
-    img=str
-    description=str
-    price=int
- 
+class FoodCatalogue(models.Model):
+    
+    name = models.CharField(max_length=100)   
+    img= models.ImageField(upload_to="foodItemGalary")
+    description=models.TextField()
+    price=models.IntegerField()
+    offer=models.BooleanField(default=False)
